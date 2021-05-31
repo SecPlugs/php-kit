@@ -1,0 +1,31 @@
+# This is regular daily test
+
+
+name: DailyTest
+
+
+on:
+  schedule:
+    - cron:  '2 4 * * *'
+    
+  workflow_dispatch:
+  
+        
+jobs:
+  pipeline:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Pull code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+
+      - name: Run Tests
+        run: |
+          ./bin/runTests.sh
+          
