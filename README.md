@@ -1,37 +1,10 @@
-## Welcome to GitHub Pages
+![CICD](https://github.com/SecPlugs/php-kit/workflows/CICD/badge.svg)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![Daily Test](https://github.com/SecPlugs/php-kit/workflows/DailyTest/badge.svg)
 
-You can use the [editor on GitHub](https://github.com/SecPlugs/php-kit/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+# php-kit
+A set of samples and tools in PHP. A good kick start for PHP based Secplugs projects.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Usage & More Info
+See the [PHP Kit GitHub Pages](https://docs.secplugs.com/php-kit/docs) for usage and other information
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/SecPlugs/php-kit/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
