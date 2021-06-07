@@ -1,0 +1,24 @@
+[
+  {
+    "name":"php_kit",
+    "type":"generic",
+    "title":"PHP Kit",
+    "created_by":"TheStig@secplugs.com",
+    "description":"Ready to use scripts, tools and examples written in PHP.",
+    "content":{
+      "summary":"https://secplugs.github.io/php-kit/docs/summary.html",
+      "detail":"https://secplugs.github.io/php-kit/docs/detail.html"
+    },
+    "images":{
+      "small":"@.secplugs/plugins/php_kit/small_image.png",
+      "normal":"@.secplugs/plugins/php_kit/normal_image.png",
+      "gallery":[
+        
+      ]
+    },
+    "links":{
+      "github":"https://github.com/SecPlugs/php-kit",
+      "more_info":"https://secplugs.github.io/php-kit/docs"
+    }
+  }
+]
