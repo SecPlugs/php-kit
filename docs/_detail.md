@@ -20,3 +20,28 @@ To use additional features and the privacy of your own account, after registerin
 Replace the key in the samples or create new scripts using these as an example.
 Use can then use the Secplugs console to view activity, run reports and do deeper retrospective threat analysis.
 
+#### Working with composer
+
+If you have a php project that uses composer to manage dependencies, it is very easy to add and integrate secplugs file scanning to your project. Just run
+
+```composer require secplugs/filescan```
+
+from the root of your project and add the following lines to the top of the php file that handles file uploads.
+
+
+    require_once($PROJECT_ROOT.'/vendor/autoload.php');
+    use Secplugs/FileScan;
+    
+    $filescan = new FileScan($my_secplugs_api_key);
+    ...
+    ...
+    ...
+    if ($filescan->isClean($uploaded_file)) {
+        // File upload handling
+    } else {
+        // Return error.
+    }
+    
+Adding these 5-6 lines of code would automatically analyse all uploaded files for malware before you store/process those files.
+
+
