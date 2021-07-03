@@ -3,6 +3,11 @@
     "description": "PHP client for the Secplugs malware analysis service for files",
     "require": {
         "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Secplugs\\": "src/Secplugs"
+        }
     }
 }
 
