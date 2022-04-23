@@ -1,6 +1,6 @@
-![CICD](https://github.com/SecPlugs/php-kit/workflows/CICD/badge.svg)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-![Daily Test](https://github.com/SecPlugs/php-kit/workflows/DailyTest/badge.svg)
+---
+layout: none
+---
 
 ## Summary
 A {brand-name} powered, ready to use PHP class and examples.
@@ -14,8 +14,6 @@ Download from [secplugs.class.php](https://docs.secplugs.com/php-kit/scripts/sec
 Or simply run the commands below in your working directory.
 ```bash
 curl https://docs.secplugs.com/php-kit/scripts/secplugs.class.php -o ./secplugs.class.php
-unzip -o BashKit.zip
-chmod +x ./*.sh
 ```
 You'll now have all the PHP class in the directory ready to use.
 
@@ -44,7 +42,6 @@ if (!$res) {
     exit(1);
 }
 ```
-
 
 ## Contact
 Having trouble? [Contact {brand-name} ](https://{brand-root-domain}/contacts)
