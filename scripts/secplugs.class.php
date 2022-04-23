@@ -13,9 +13,9 @@
  */
 
 class Secplugs {
-    public const SECPLUGS_DEFAULT_API_KEY = "ammzxNR0cm5HpIMwcC3rr72Ti8GWPXLo69EZAeyo";
-    public const SECPLUGS_BASE_URL = "https://api.live.secplugs.com/security";
-    public const SECPLUGS_CLEAN_MID_SCORE = 70;
+    public  static $SECPLUGS_DEFAULT_API_KEY = "ammzxNR0cm5HpIMwcC3rr72Ti8GWPXLo69EZAeyo";
+    public  static $SECPLUGS_BASE_URL = "https://api.live.secplugs.com/security";
+    public  static $SECPLUGS_CLEAN_MID_SCORE = 70;
     
     private $apiKey;
     private $filename;
@@ -27,7 +27,10 @@ class Secplugs {
      * @param string $apiKey - The confidential API key from the portal
      *
      */
-    public function __construct(string $apiKey = self::SECPLUGS_DEFAULT_API_KEY) {
+    public function __construct($apiKey = null) {
+        if($apiKey == null) {
+            $apiKey = self::$SECPLUGS_DEFAULT_API_KEY;
+        }
         $this->apiKey = $apiKey;
         $this->filename = "";
         $this->cksum = "";
@@ -41,10 +44,10 @@ class Secplugs {
      * @return bool - true if file is clean, false otherwise.
      *
      */
-    public function isClean(string $filename) {
+    public function isClean($filename) {
         $res = $this->scanFile($filename);
         $report = json_decode($res, true);
-        if ($report["score"] < self::SECPLUGS_CLEAN_MID_SCORE) {
+        if ($report["score"] < self::$SECPLUGS_CLEAN_MID_SCORE) {
             return false;
         } else {
             return true;
@@ -60,7 +63,7 @@ class Secplugs {
      * @return string - The JSON response encoded as a string. This should be decoded for further use.
      *
      */
-    public function scanFile(string $filename) {
+    public function scanFile($filename) {
         $pre_signed = $this->getPresignedUrl($filename);
         $this->uploadFile($pre_signed);
         $res = $this->quickScan();
@@ -75,11 +78,11 @@ class Secplugs {
      * @return string - The JSON response encoded as a string.
      *
      */
-    public function getPresignedUrl(string $filename) {
+    public function getPresignedUrl($filename) {
         $this->filename = $filename;
         $sha256 = hash_file('sha256', $filename);
         $this->cksum = $sha256;
-        $file_upload_url = self::SECPLUGS_BASE_URL . "/file/upload?sha256=" . $sha256;
+        $file_upload_url = self::$SECPLUGS_BASE_URL . "/file/upload?sha256=" . $sha256;
         $curl_ctxt = curl_init();
         curl_setopt($curl_ctxt, CURLOPT_URL, $file_upload_url);
         curl_setopt($curl_ctxt, CURLOPT_RETURNTRANSFER, 1);
@@ -130,7 +133,7 @@ class Secplugs {
         $sha256 = $this->cksum;
         $data = array('scancontext' => $scan_context, 'sha256' => $sha256);
         $qp = http_build_query($data);
-        $url = self::SECPLUGS_BASE_URL . '/file/quickscan?' . $qp;
+        $url = self::$SECPLUGS_BASE_URL . '/file/quickscan?' . $qp;
         $cc = curl_init();
         curl_setopt($cc, CURLOPT_URL, $url);
         curl_setopt($cc, CURLOPT_RETURNTRANSFER, 1);
