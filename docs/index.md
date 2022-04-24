@@ -52,7 +52,7 @@ To use additional features and the privacy of your own account, after registerin
 After creating a key, the only change to the code sample above would be
 
 ```php
-$file_scanner = new Secplugs("my-api-key");
+$file_scanner = new Secplugs("your-api-key");
 ```
 
 Everything else remains the same.
