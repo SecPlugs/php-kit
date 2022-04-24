@@ -9,7 +9,7 @@ Currently the plugin supports file upload and scanning from the command line.
 #### What are the features?
 
 - __File Scanning__ - Easy functions to allow uploading o files for scanning
-- __Secplugs Portal__ - With a registered API key you can access all the core Secplugs features via the portal.
+- __{brand-name} Portal__ - With a registered API key you can access all the core Secplugs features via the portal.
 
 #### How does it work?
 

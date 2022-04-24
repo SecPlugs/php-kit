@@ -6,5 +6,5 @@
 A set of samples and tools in PHP. A good kick start for PHP based Secplugs projects.
 
 ## Usage & More Info
-See the [PHP Kit GitHub Pages](https://docs.secplugs.com/php-kit/docs) for usage and other information
+See the [PHP Docs](https://scancloud.io/index.php/docs?plugin=plugin-secplugs-php-kit) for usage and other information
 
